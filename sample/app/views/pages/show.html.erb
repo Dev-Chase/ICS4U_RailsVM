@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @page.premiers_trois_mots_de_contenu %>...
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @page.nom %>
+</p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @page.titre %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @page.slug %>
+</p>
+
+<p>
+  <% if @page.image.attached? %>
+    <%= image_tag @page.image, style: "width: 200px; display: block" %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @page.category.nom %>
+</p>
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>
