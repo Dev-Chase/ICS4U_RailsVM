@@ -6,6 +6,11 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  # GET /categories or /categories.json
+  def related_products(product_id)
+    @categories = Product.where(id: product_id)
+  end
+
   # GET /categories/1 or /categories/1.json
   def show
   end
