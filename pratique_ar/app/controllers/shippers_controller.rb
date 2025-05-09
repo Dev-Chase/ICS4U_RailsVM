@@ -3,7 +3,7 @@ class ShippersController < ApplicationController
 
   # GET /shippers or /shippers.json
   def index
-    @shippers = Shipper.all
+    @shippers = restricted_index(Shipper)
   end
 
   # GET /shippers/1 or /shippers/1.json

@@ -7,6 +7,7 @@
     <tr>
       <th>Shipper name</th>
       <th>Phone</th>
+      <th>Orders</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= shipper.shipper_name %></td>
         <td><%= shipper.phone %></td>
+        <td><%= link_to "Orders", orders_path(field_name: :shipper_id, value: shipper.id) %></td>
         <td><%= link_to 'Show', shipper %></td>
         <td><%= link_to 'Edit', edit_shipper_path(shipper) %></td>
         <td><%= link_to 'Destroy', shipper, method: :delete, data: { confirm: 'Are you sure?' } %></td>

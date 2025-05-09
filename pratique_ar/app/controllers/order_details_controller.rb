@@ -3,7 +3,7 @@ class OrderDetailsController < ApplicationController
 
   # GET /order_details or /order_details.json
   def index
-    @order_details = OrderDetail.all
+    @order_details = restricted_index(OrderDetail)
   end
 
   # GET /order_details/1 or /order_details/1.json

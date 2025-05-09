@@ -3,12 +3,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
-  end
-
-  # GET /categories or /categories.json
-  def related_products(product_id)
-    @categories = Product.where(id: product_id)
+    @categories = restricted_index(Category)
   end
 
   # GET /categories/1 or /categories/1.json

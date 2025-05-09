@@ -3,7 +3,11 @@ class OrdersController < ApplicationController
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
+    if params[:order_by]
+      @orders = Order.order(params[:order_by])
+    else
+      @orders = restricted_index(Order)
+    end
   end
 
   # GET /orders/1 or /orders/1.json

@@ -1,14 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Orders</h1>
-<h2><%= link_to 'Products', @products %></h2> 
-<!-- TODO: find out how to fix -->
+<!-- <h2><%= link_to 'Products', @products %></h2>  -->
+
+<div id="order_menu">
+  <h3 class="menu_item"><%= link_to "Order by Employee ID", orders_path(order_by: :employee_id) %></h3>
+  <h3 class="menu_item"><%= link_to "Order by Customer ID", orders_path(order_by: :customer_id) %></h3>
+  <h3 class="menu_item"><%= link_to "Order by Shipper ID", orders_path(order_by: :shipper_id) %></h3>
+</div>
 <table>
   <thead>
     <tr>
       <th>Customer</th>
       <th>Employee</th>
-      <th>Order date</th>
+      <th>Order Date</th>
+      <th>Order Details</th>
       <th>Shipper</th>
       <th colspan="3"></th>
     </tr>
@@ -17,10 +23,11 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.customer_id %></td>
-        <td><%= order.employee_id %></td>
+        <td><%= link_to "#{order.customer_id}", customer_path(order.customer_id) %></td>
+        <td><%= link_to "#{order.employee_id}", employee_path(order.employee_id) %></td>
         <td><%= order.order_date %></td>
-        <td><%= order.shipper_id %></td>
+        <td><%= link_to "Details", order_details_path(field_name: :order_id, value: order.id) %></td>
+        <td><%= link_to "#{order.shipper_id}", shipper_path(order.shipper_id) %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>

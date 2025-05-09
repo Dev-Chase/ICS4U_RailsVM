@@ -9,14 +9,16 @@
   </head>
 
   <body>
-    <%= link_to "Categories", categories_path, class:(controller.controller_name=="categories")? "active":"" %>
-    <%= link_to "Customers", customers_path, class:(controller.controller_name=="customers")? "active":"" %>
-    <%= link_to "Employees", employees_path, class:(controller.controller_name=="employees")? "active":"" %>
-    <%= link_to "Orders", orders_path, class:(controller.controller_name=="orders")? "active":"" %>
-    <%= link_to "Order Details", order_details_path, class:(controller.controller_name=="order_details")? "active":"" %>
-    <%= link_to "Products", products_path, class:(controller.controller_name=="products")? "active":"" %>
-    <%= link_to "Shippers", shippers_path, class:(controller.controller_name=="shippers")? "active":"" %>
-    <%= link_to "Suppliers", suppliers_path, class:(controller.controller_name=="suppliers")? "active":"" %>
+    <div id="menu">
+      <%= link_to "Categories", categories_path, class:("active" if controller.controller_name=="categories") %>
+      <%= link_to "Customers", customers_path, class:(controller.controller_name=="customers")? "active":"" %>
+      <%= link_to "Employees", employees_path, class:(controller.controller_name=="employees")? "active":"" %>
+      <%= link_to "Orders", orders_path, class:(controller.controller_name=="orders")? "active":"" %>
+      <%= link_to "Order Details", order_details_path, class:(controller.controller_name=="order_details")? "active":"" %>
+      <%= link_to "Products", products_path, class:(controller.controller_name=="products")? "active":"" %>
+      <%= link_to "Shippers", shippers_path, class:(controller.controller_name=="shippers")? "active":"" %>
+      <%= link_to "Suppliers", suppliers_path, class:(controller.controller_name=="suppliers")? "active":"" %>
+    </div>
     <%= yield %>
   </body>
 </html>

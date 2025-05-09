@@ -3,7 +3,10 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    @products = restricted_index(Product)
+  end
+
+  def related_products
   end
 
   # GET /products/1 or /products/1.json

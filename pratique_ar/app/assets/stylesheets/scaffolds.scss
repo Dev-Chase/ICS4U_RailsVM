@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #ADD;
   color: #333;
   margin: 33px; }
 
@@ -8,26 +8,64 @@ body, p, ol, ul, td {
   font-size: 13px;
   line-height: 18px; }
 
+#order_menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: left;
+  margin-top: 1rem;
+}
+
+#order_menu.menu_item {
+  margin: 0;
+}
+
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px; }
 
 a {
-  color: #000; }
+  color: black;
+}
 
 a:visited {
-  color: #666; }
+  color: black;
+}
+
+a:visited.active {
+  color: red;
+}
 
 a:hover {
   color: #fff;
   background-color: #000; }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, td, th {
+  border: 1px solid black;
+}
+
 th {
-  padding-bottom: 5px; }
+  padding: 0 0.5em 0 0.5em;
+}
 
 td {
-  padding: 0 5px 7px; }
+  padding: 0 5px 7px;
+}
+
+.active {
+  color: red;
+}
+
+#menu {
+  width: 100%;
+  border-bottom: 0.1em solid black;
+  display: table;
+}
 
 div.field,
 div.actions {
