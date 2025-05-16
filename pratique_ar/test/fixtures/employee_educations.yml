@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  institution: MyString
+  degree: MyString
+  date_obtained: 2025-05-15
+  completed: false
+  employee: one
+
+two:
+  institution: MyString
+  degree: MyString
+  date_obtained: 2025-05-15
+  completed: false
+  employee: two

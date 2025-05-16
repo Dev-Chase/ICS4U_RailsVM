@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Countries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th class="country_th">Name</th>
+      <th class="country_th" colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @countries.each do |country| %>
+      <tr>
+        <td><%= country.name %></td>
+        <td><%= link_to 'Show', country %></td>
+        <td><%= link_to 'Edit', edit_country_path(country) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Country', new_country_path %>

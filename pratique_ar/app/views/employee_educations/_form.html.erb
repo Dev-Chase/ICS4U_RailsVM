@@ -1,0 +1,42 @@
+<%= form_with(model: employee_education, local: true) do |form| %>
+  <% if employee_education.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employee_education.errors.count, "error") %> prohibited this employee_education from being saved:</h2>
+
+      <ul>
+        <% employee_education.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :institution %>
+    <%= form.text_field :institution %>
+  </div>
+
+  <div class="field">
+    <%= form.label :degree %>
+    <%= form.text_field :degree %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_obtained %>
+    <%= form.date_select :date_obtained %>
+  </div>
+
+  <div class="field">
+    <%= form.label :completed %>
+    <%= form.check_box :completed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employee_id %>
+    <%= form.text_field :employee_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

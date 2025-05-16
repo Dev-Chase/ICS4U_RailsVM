@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Employee Educations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Institution</th>
+      <th>Degree</th>
+      <th>Date obtained</th>
+      <th>Completed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employee_educations.each do |employee_education| %>
+      <tr>
+        <td><%= link_to "#{employee_education.employee.first_name} #{employee_education.employee.last_name}", employee_path(employee_education.employee.id) %></td>
+        <td><%= employee_education.institution %></td>
+        <td><%= employee_education.degree %></td>
+        <td><%= employee_education.date_obtained %></td>
+        <td><%= employee_education.completed %></td>
+        <td><%= link_to 'Show', employee_education %></td>
+        <td><%= link_to 'Edit', edit_employee_education_path(employee_education) %></td>
+        <td><%= link_to 'Destroy', employee_education, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employee Education', new_employee_education_path %>

@@ -21,9 +21,13 @@
         <td><%= customer.customer_name %></td>
         <td><%= customer.contact_name %></td>
         <td><%= customer.address %></td>
-        <td><%= customer.city %></td>
+        <% if customer.city %>
+        <td><%= link_to customer.city.name, city_path(customer.city_id) %></td>
+        <% else %>
+        <td>n.a.</td>
+        <% end %>
         <td><%= customer.postal_code %></td>
-        <td><%= customer.country %></td>
+        <td><%= link_to customer.country.name, country_path(customer.country_id) %></td>
         <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

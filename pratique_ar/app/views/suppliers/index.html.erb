@@ -23,9 +23,13 @@
         <td><%= supplier.supplier_name %></td>
         <td><%= supplier.contact_name %></td>
         <td><%= supplier.address %></td>
-        <td><%= supplier.city %></td>
+        <% if supplier.city.present? %>
+          <td><%= link_to supplier.city.name, city_path(supplier.city_id) %></td>
+        <% else %>
+          <td>n.a.</td>
+        <% end %>
         <td><%= supplier.postal_code %></td>
-        <td><%= supplier.country %></td>
+        <td><%= link_to supplier.country.name, country_path(supplier.country_id) %></td>
         <td><%= supplier.phone %></td>
         <td><%= link_to "Products", products_path(field_name: :supplier_id, value: supplier.id) %></td>
         <td><%= link_to 'Show', supplier %></td>

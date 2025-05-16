@@ -10,9 +10,13 @@
 
   <body>
     <div id="menu">
+      <%= link_to "Home", root_path, class:("active" if controller.controller_name=="homes") %>
+      <%= link_to "Countries", countries_path, class:("active" if controller.controller_name=="countries") %>
+      <%= link_to "Cities", cities_path, class:("active" if controller.controller_name=="cities") %>
       <%= link_to "Categories", categories_path, class:("active" if controller.controller_name=="categories") %>
       <%= link_to "Customers", customers_path, class:(controller.controller_name=="customers")? "active":"" %>
       <%= link_to "Employees", employees_path, class:(controller.controller_name=="employees")? "active":"" %>
+      <%= link_to "Employee Education", employee_educations_path, class:(controller.controller_name=="employee_educations")? "active":"" %>
       <%= link_to "Orders", orders_path, class:(controller.controller_name=="orders")? "active":"" %>
       <%= link_to "Order Details", order_details_path, class:(controller.controller_name=="order_details")? "active":"" %>
       <%= link_to "Products", products_path, class:(controller.controller_name=="products")? "active":"" %>
